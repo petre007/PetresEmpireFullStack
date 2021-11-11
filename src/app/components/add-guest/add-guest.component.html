@@ -1,0 +1,44 @@
+<h1>Menu to add a participant to this festival</h1>
+<div class="submit-form">
+    <div *ngIf="!submitted">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input 
+            type = "text" 
+            class="form-control" 
+            id="firstName" 
+            required [(ngModel)]="guest.firstName" 
+            name="firstName">
+            <label for="lastName">Last name</label>
+            <input 
+            type="text"
+            class="form-control"
+            id="lastName"
+            required [(ngModel)]="guest.lastName"
+            name = "lastName"
+            >
+            <label for="age">Age</label>
+            <input 
+            type="number"
+            class="form-control"
+            id="age"
+            required [(ngModel)]="guest.age"
+            name="age"
+            >
+            <label for="money">Money</label>
+            <input 
+            type="number"
+            class="form-control"
+            id="money"
+            required [(ngModel)]="guest.money"
+            name="money"
+            >
+            </div>
+            <button class="btn btn-succes" (click)="saveGuest()">Submit</button>
+    </div>
+    
+    <div *ngIf = "submitted">
+        <h3>Submite successfully!</h3>
+        <button class="btn btn-succes" (click)="newGuest()">Add new guest</button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div style="width: 400px; margin: auto;">
+    <div class="form-group">
+        <div *ngIf="!submitted">
+            <label for="id">Insert ID of the guest</label>
+            <input type="number" class="form-control" id="id" required [(ngModel)]="guest.id" name="id">
+            <button class="btn btn-succes" (click)="getGuest(guest.id)">Submit</button>
+        </div>
+
+        <div *ngIf = "submitted">
+                <div *ngIf ="!submitted1">
+                    <h3>Update money for Mr/Mrs {{guest.lastName}} {{ guest.firstName }}</h3>
+                    <label for="money">Update Money</label>
+                    <input type="number" class="form-control" id="money" required [(ngModel)]="guest.money" name="money">
+                    <button class="btn btn-succes" (click)="updateGuest(guest.money)">Submit</button>
+                </div>
+                <div *ngIf = "submitted1">
+                    <h3>Money updateted</h3>
+                    <button class="btn btn-blue" onclick="location.href='guestlist'">Go back to the database</button>
+                </div>
+        </div>
+
+    </div>
+</div>
